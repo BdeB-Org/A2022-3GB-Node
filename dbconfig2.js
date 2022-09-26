@@ -84,7 +84,7 @@ module.exports = {
 
   // For information on connection strings see:
   // https://oracle.github.io/node-oracledb/doc/api.html#connectionstrings
-  connectString: "localhost/orclpdb1",
+  connectString: "localhost/orcl",
 
   // Setting externalAuth is optional.  It defaults to false.  See:
   // https://oracle.github.io/node-oracledb/doc/api.html#extauth
