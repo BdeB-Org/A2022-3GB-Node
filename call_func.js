@@ -3,24 +3,10 @@ const fs = require("fs");
 const oracledb = require("oracledb");
 const logger = require("./logger"); //module pour logger
 const dbConfig = require("./dbconfig2.js");
-const hostname = "localhost"; //On déclare l'adresse du serveur web sur lequel on va coder
+const hostname = "localhost"; //On déclare l'adresse du serveur web sur lequel le serveur va écouter
 const port = 3010; //On déclare le port
-// Sur Windows et macOS, vous pouvez spécifier le répertoire qui contient
-// les Libraries Client Oracle lors de l'exécution, ou avant le démarrage de Node.js starts.
-// Si le chemin n'est pas bon vous obtiendrez un erreur DPI-1047.
 
 logger.log("debug", "Allo, Winston!");
-let libPath;
-if (process.platform === "win32") {
-  // Windows
-  libPath = "C:\\oracle\\instantclient_19_17";
-} else if (process.platform === "darwin") {
-  // macOS
-  libPath = process.env.HOME + "/instantclient_19_8";
-}
-if (libPath && fs.existsSync(libPath)) {
-  oracledb.initOracleClient({ libDir: libPath });
-}
 
 const server = http.createServer((req, res) => {
   logger.log(
